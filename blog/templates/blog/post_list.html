@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Blog App{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 10px;">
+    <a href="{% url 'post_create' %}" class="btn">+ New Blog</a>
+</div>
+
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li style="margin-bottom: 10px;">
+                <a href="{% url 'post_detail' post.pk %}">
+                    <strong>{{ post.title }}</strong>
+                </a>
+                <br>
+                <small>{{ post.created_at }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No notes yet. <a href="{% url 'post_create' %}">Create one</a>.</p>
+{% endif %}
+{% endblock %}
