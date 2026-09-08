@@ -43,5 +43,3 @@ This project was built to learn and practice Django web development, including u
 ## Author
 
 Syam Kumar
-
- Feel free to fork, use, and improve this project.
